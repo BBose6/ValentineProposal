@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: pink;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        .container {
+            position: relative;
+            margin-top: 50px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+            position: absolute;
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? 💕</h1>
+    <img src="your-image-url-here" alt="Your Image" class="profile-img">
+    <div class="container">
+        <button class="btn yes" onclick="sayYes()">Yes 💖</button>
+        <button class="btn no" onmouseover="moveNo()">No 💔</button>
+    </div>
+    <div class="hearts"></div>
+    
+    <script>
+        function sayYes() {
+            document.body.innerHTML = "<h1>Yay! Can't wait to celebrate with you! ❤️🥰</h1>";
+        }
+
+        function moveNo() {
+            let btn = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
